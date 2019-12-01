@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Day1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
+		part1();
 		part2();
 	}
 
@@ -23,6 +24,7 @@ public class Day1 {
 			totalFuel += Math.floor(num / 3) - 2;
 
 		}
+		// Find total amount of fuel
 		System.out.println(totalFuel);
 
 	}
@@ -39,9 +41,9 @@ public class Day1 {
 			// divide by 3 and round down to get 4, then subtract 2 .
 			int nextFuel = (int) Math.floor(num / 3) - 2; 
 			int subTotal = 0;
-			while (nextFuel>=0) {
-				subTotal += nextFuel;
-				nextFuel = (int) Math.floor(nextFuel / 3) - 2;
+			while (nextFuel>=0) { // if more fuel is zero or negative stop calculating
+				subTotal += nextFuel; 
+				nextFuel = (int) Math.floor(nextFuel / 3) - 2; // calculate next Fuel level
 			}
 			totalFuel += subTotal;
 		}
